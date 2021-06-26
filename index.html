@@ -46,7 +46,7 @@
             const music = new BABYLON.Sound("Eno1", "./Audio/Eno1.mp3", scene, null, { loop: true, autoplay: true});
 
             const groundMat = new BABYLON.StandardMaterial("groundMat");
-            groundMat.diffuseColor = new BABYLON.Color3(0.35, 0.50, 0.05);
+            groundMat.diffuseColor = new BABYLON.Color3(0.16, 0.29, 0.03);
 
 
             //BABYLON.SceneLoader.ImportMeshAsync("box", "./scenes/", "box.babylon");
@@ -58,7 +58,7 @@
             roof.position.y = 1.22;
             const ground = BABYLON.MeshBuilder.CreateGround("ground", {width:10, height:10});
             ground.material = groundMat;
-            
+
 
             return scene;
         };
