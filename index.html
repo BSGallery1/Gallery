@@ -43,8 +43,8 @@
             camera.attachControl(canvas, true);
             const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-            const music = new BABYLON.Sound("music", "./Audio/eno1.mp3", scene, null, { loop: true, autoplay: true});
-            
+            const music = new BABYLON.Sound("Eno1", "./Audio/Eno1.mp3", scene, null, { loop: true, autoplay: true});
+
 
             //BABYLON.SceneLoader.ImportMeshAsync("box", "./scenes/", "box.babylon");
             const box = BABYLON.MeshBuilder.CreateBox("box", {});
