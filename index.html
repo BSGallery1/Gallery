@@ -45,7 +45,7 @@
 
             const ground = buildGround();
             const box = buildBox();
-            
+
             const roofMat = new BABYLON.StandardMaterial("roofMat");
             roofMat.diffuseTexture = new BABYLON.Texture("./textures/roof_Tv2.jpg", scene);
    
@@ -86,6 +86,7 @@
 
             return box;
         }
+        
         const scene = createScene(); //Call the createScene function
 
         // Register a render loop to repeatedly render the scene
