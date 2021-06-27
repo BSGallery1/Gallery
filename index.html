@@ -68,7 +68,7 @@
             const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
             const ground = buildGround();
-            const box = buildBox;
+            const box = buildBox();
             const roofMat = new BABYLON.StandardMaterial("roofMat");
             roofMat.diffuseTexture = new BABYLON.Texture("./textures/roof_Tv2.jpg", scene);
             
