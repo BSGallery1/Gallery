@@ -75,7 +75,7 @@
             return scene;
         }
 
-        const buildGround = () => {
+        const buildGround = function() {
             const groundMat = new BABYLON.StandardMaterial("groundMat");
             groundMat.diffuseColor = new BABYLON.Color3(0.16, 0.29, 0.03);
             const ground = BABYLON.MeshBuilder.CreateGround("ground", {width:10, height:10});
