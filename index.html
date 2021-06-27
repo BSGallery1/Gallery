@@ -43,7 +43,7 @@
             camera.attachControl(canvas, true);
             const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-            const buildGround();
+            const ground = buildGround();
 
             const roofMat = new BABYLON.StandardMaterial("roofMat");
             roofMat.diffuseTexture = new BABYLON.Texture("./textures/roof_Tv2.jpg", scene);
