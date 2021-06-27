@@ -63,7 +63,6 @@
             
             const ground = BABYLON.MeshBuilder.CreateGround("ground", {width:10, height:10});
             ground.material = groundMat;
-            return ground;
         }
 
         const buildBox = () => {
@@ -96,7 +95,6 @@
 
         const playMusic = () => {
             const music = new BABYLON.Sound("Eno1", "./Audio/Eno1.mp3", scene, null, { loop: true, autoplay: true});
-            return music;
         }
         const scene = createScene(); //Call the createScene function
 
