@@ -43,9 +43,8 @@
             camera.attachControl(canvas, true);
             const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-            const groundMat = new BABYLON.StandardMaterial("groundMat");
-            groundMat.diffuseColor = new BABYLON.Color3(0.16, 0.29, 0.03);
-            
+            const buildGround();
+
             const roofMat = new BABYLON.StandardMaterial("roofMat");
             roofMat.diffuseTexture = new BABYLON.Texture("./textures/roof_Tv2.jpg", scene);
             const boxMat = new BABYLON.StandardMaterial("boxMat");
@@ -71,13 +70,17 @@
             roof.scaling.y = 2;
             roof.rotation.z = Math.PI / 2;
             roof.position.y = 1.22;
-            const ground = BABYLON.MeshBuilder.CreateGround("ground", {width:10, height:10});
-            ground.material = groundMat;
-
+            
 
             return scene;
         }
 
+        const buildGround = () => {
+            const groundMat = new BABYLON.StandardMaterial("groundMat");
+            groundMat.diffuseColor = new BABYLON.Color3(0.16, 0.29, 0.03);
+            const ground = BABYLON.MeshBuilder.CreateGround("ground", {width:10, height:10});
+            ground.material = groundMat;
+        }
         const scene = createScene(); //Call the createScene function
 
         // Register a render loop to repeatedly render the scene
