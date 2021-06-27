@@ -43,11 +43,16 @@
             camera.attachControl(canvas, true);
             const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-            const music = new BABYLON.Sound("Eno1", "./Audio/Eno1.mp3", scene, null, { loop: true, autoplay: true});
-
             const groundMat = new BABYLON.StandardMaterial("groundMat");
             groundMat.diffuseColor = new BABYLON.Color3(0.16, 0.29, 0.03);
            
+            const roofMat = new BABYLON.StandardMaterial("roofMat");
+            roofMat.diffuseTexture = new BABYLON.Texture("./textures/roof_T.jpg", scene);
+            
+
+            const music = new BABYLON.Sound("Eno1", "./Audio/Eno1.mp3", scene, null, { loop: true, autoplay: true});
+
+            
 
 
             //BABYLON.SceneLoader.ImportMeshAsync("box", "./scenes/", "box.babylon");
@@ -55,7 +60,7 @@
            
             box.position.y = 0.5;
             const roof = BABYLON.MeshBuilder.CreateCylinder("roof", {diameter: 1.3, height: 1.2, tessellation: 3});
-           
+            roof.material = roofMat;
             roof.scaling.x = 0.75;
             roof.rotation.z = Math.PI / 2;
             roof.position.y = 1.22;
