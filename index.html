@@ -44,7 +44,7 @@
             const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
             
-            const music = playMusic();
+            //const music = playMusic();
             const ground = buildGround();
             const box = buildBox();
             const roof = buildRoof();
@@ -93,9 +93,9 @@
             return roof;
         }
 
-        const playMusic = () => {
-            const music = new BABYLON.Sound("Eno1", "./Audio/Eno1.mp3", scene, null, { loop: true, autoplay: true});
-        }
+        //const playMusic = () => {
+        //    const music = new BABYLON.Sound("Eno1", "./Audio/Eno1.mp3", scene, null, { loop: true, autoplay: true});
+        //}
         const scene = createScene(); //Call the createScene function
 
         // Register a render loop to repeatedly render the scene
