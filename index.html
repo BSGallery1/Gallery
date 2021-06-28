@@ -33,14 +33,14 @@
     <script>
         const canvas = document.getElementById("renderCanvas"); // Get the canvas element
         const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
-        const buildGround = function() {
+        const buildGround = () => {
             const groundMat = new BABYLON.StandardMaterial("groundMat");
             groundMat.diffuseColor = new BABYLON.Color3(0.16, 0.29, 0.03);
             const ground = BABYLON.MeshBuilder.CreateGround("ground", {width:10, height:10});
             ground.material = groundMat;
-        };
+        }
 
-        const buildBox = function() {
+        const buildBox = () => {
             const boxMat = new BABYLON.StandardMaterial("boxMat");
             boxMat.diffuseTexture = new BABYLON.Texture("./textures/semihouse_T.png", scene);
             const faceUV = [];
@@ -56,10 +56,10 @@
             box.position.y = 0.5;
 
             return box;
-        };
+        }
 
         // Add your code here matching the playground format
-        const createScene = function() {
+        const createScene = () => {
             
             const scene = new BABYLON.Scene(engine);  
 
@@ -67,8 +67,6 @@
             camera.attachControl(canvas, true);
             const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-            const ground = buildGround();
-            const box = buildBox();
             const roofMat = new BABYLON.StandardMaterial("roofMat");
             roofMat.diffuseTexture = new BABYLON.Texture("./textures/roof_Tv2.jpg", scene);
             
@@ -82,10 +80,13 @@
             roof.rotation.z = Math.PI / 2;
             roof.position.y = 1.22;
             
+            const box = buildBox();
+            const ground = buildGround();
 
             return scene;
         };
 
+        
        
         
         const scene = createScene(); //Call the createScene function
