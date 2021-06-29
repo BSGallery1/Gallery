@@ -33,30 +33,9 @@
     <script>
         const canvas = document.getElementById("renderCanvas"); // Get the canvas element
         const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
-        const buildGround = () => {
-            const groundMat = new BABYLON.StandardMaterial("groundMat");
-            groundMat.diffuseColor = new BABYLON.Color3(0.16, 0.29, 0.03);
-            const ground = BABYLON.MeshBuilder.CreateGround("ground", {width:10, height:10});
-            ground.material = groundMat;
-        }
+        
 
-        const buildBox = () => {
-            const boxMat = new BABYLON.StandardMaterial("boxMat");
-            boxMat.diffuseTexture = new BABYLON.Texture("./textures/semihouse_T.png", scene);
-            const faceUV = [];
-            faceUV[0] = new BABYLON.Vector4(0.6, 0.0, 1.0, 1.0);
-            faceUV[1] = new BABYLON.Vector4(0.0, 0.0, 0.4, 1.0);
-            faceUV[2] = new BABYLON.Vector4(0.4, 0, 0.6, 1.0);
-            faceUV[3] = new BABYLON.Vector4(0.4, 0, 0.6, 1.0);
-
-
-            //BABYLON.SceneLoader.ImportMeshAsync("box", "./scenes/", "box.babylon");
-            const box = BABYLON.MeshBuilder.CreateBox("box", {width: 2, faceUV: faceUV, wrap: true});
-            box.material = boxMat;
-            box.position.y = 0.5;
-
-            return box;
-        }
+        
 
         // Add your code here matching the playground format
         const createScene = () => {
@@ -80,9 +59,24 @@
             roof.rotation.z = Math.PI / 2;
             roof.position.y = 1.22;
             
-            const box = buildBox();
-            const ground = buildGround();
+            const boxMat = new BABYLON.StandardMaterial("boxMat");
+            boxMat.diffuseTexture = new BABYLON.Texture("./textures/semihouse_T.png", scene);
+            const faceUV = [];
+            faceUV[0] = new BABYLON.Vector4(0.6, 0.0, 1.0, 1.0);
+            faceUV[1] = new BABYLON.Vector4(0.0, 0.0, 0.4, 1.0);
+            faceUV[2] = new BABYLON.Vector4(0.4, 0, 0.6, 1.0);
+            faceUV[3] = new BABYLON.Vector4(0.4, 0, 0.6, 1.0);
 
+
+            //BABYLON.SceneLoader.ImportMeshAsync("box", "./scenes/", "box.babylon");
+            const box = BABYLON.MeshBuilder.CreateBox("box", {width: 2, faceUV: faceUV, wrap: true});
+            box.material = boxMat;
+            box.position.y = 0.5;
+
+            const groundMat = new BABYLON.StandardMaterial("groundMat");
+            groundMat.diffuseColor = new BABYLON.Color3(0.16, 0.29, 0.03);
+            const ground = BABYLON.MeshBuilder.CreateGround("ground", {width:10, height:10});
+            ground.material = groundMat;
             return scene;
         };
 
